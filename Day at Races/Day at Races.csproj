@@ -96,5 +96,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Finishline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Finishline2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dog.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
