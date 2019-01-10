@@ -9,8 +9,8 @@ namespace Day_at_Races.Models
     public class Bet
     {
         public int Amount { get; set; }
-        public int Dog { get; set; } // The amount of cash that was bet
-        public Guy Bettor { get; set; }// The number of the dog the bet is on
+        public int Dog { get; set; } 
+        public Guy Bettor { get; set; }
        
 
 

@@ -36,15 +36,15 @@
             </Grid>-->
 
             <Canvas Background="LightGray">
-                <Image Source="Images/dog.jpg" Canvas.Top="10" HorizontalAlignment="Left" Height="50" Margin="0 5">
+                <Image Source="Images/dog.jpg" Canvas.Left="0" Canvas.Top="10" HorizontalAlignment="Left" Height="50" Margin="0 5" Name="DogImage1">
                     </Image>
-                <Image Source="Images/dog.jpg"  Canvas.Top="65"   HorizontalAlignment="Left" Height="50" Margin="0 5">
+                <Image Source="Images/dog.jpg"  Canvas.Top="65" Canvas.Left="0"  HorizontalAlignment="Left" Height="50" Margin="0 5" Name="DogImage2">
                 </Image>
-                <Image Source="Images/dog.jpg" Canvas.Top="120"   HorizontalAlignment="Left" Height="50" Margin="0 5">
+                <Image Source="Images/dog.jpg" Canvas.Top="120"   Canvas.Left="0" HorizontalAlignment="Left" Height="50" Margin="0 5" Name="DogImage3">
                 </Image>
                 <Image Source="Images/dog.jpg" Canvas.Top="175"   HorizontalAlignment="Left" Height="50" Canvas.Left="0" Margin="0 5" Name="DogImage4">
                 </Image>
-                <Image Source="Images/Finishline2.jpg" Canvas.Right="0" Width="150" Canvas.Top="30" ></Image>
+                <Image Name="FinishLine"  Source="Images/Finishline2.jpg" Width="150" Canvas.Right="0" Canvas.Top="30"></Image>
             </Canvas>
         </Border>
 
@@ -65,11 +65,17 @@
             </Grid.RowDefinitions>
             <Label VerticalAlignment="Top">Betting Parlour</Label>
             <Label  Name="MinimumBet" VerticalAlignment="Top" Grid.Row="1">Minimum Bet: 5 bucks</Label>
-            <RadioButton Grid.Row="2" VerticalAlignment="Center" GroupName="Guys"  Name="FirstRadiotbn" Checked="FirstRadiotbn_Checked">
+            <RadioButton  Grid.Row="2" VerticalAlignment="Center" GroupName="Guys"  Name="FirstRadiotbn" Checked="FirstRadiotbn_Checked">
+                <RadioButton.Content>
+                    <Binding Path="Cash"/>
+                </RadioButton.Content>
+                <RadioButton.ContentStringFormat>
+                    Joe has {0} bucks
+                </RadioButton.ContentStringFormat>
             </RadioButton>
             <RadioButton Name="SecondRadiobtn" Grid.Row="3" VerticalAlignment="Center"  GroupName="Guys" Checked="SecondRadiobtn_Checked">
                 <RadioButton.Content>
-                    <Binding Path="Name"/>
+                    <Binding Path="Cash"/>
                 </RadioButton.Content>
                 <RadioButton.ContentStringFormat>
                     Bob has {0} bucks
@@ -77,10 +83,10 @@
             </RadioButton>
             <RadioButton Grid.Row="4" VerticalAlignment="Center"   GroupName="Guys" Name="ThirdRadionbtn" Checked="ThirdRadionbtn_Checked">
                 <RadioButton.Content>
-                    <Binding Path="Name"/>
+                    <Binding Path="Cash"/>
                 </RadioButton.Content>
                 <RadioButton.ContentStringFormat>
-                    Joe has {0} bucks
+                    Al has {0} bucks
                 </RadioButton.ContentStringFormat>
 
             </RadioButton>
@@ -95,7 +101,7 @@
 
 
                 <Button Name="BetButton"  Click="BetButton_Click" Margin="7 2" Width="40">Bets</Button>
-                <TextBox Width="50" Margin="7 2" Name="BetTextBox"></TextBox>
+                <TextBox  Width="50" Margin="7 2" Name="BetTextBox"></TextBox>
                 <Label>Bucks on dog</Label>
                 <ComboBox IsEditable="True" Name="DogComboBox"
                     Margin="7 2" Width="100" Text="Select  dog">
@@ -106,7 +112,7 @@
                 </ComboBox>
 
             </StackPanel>
-            <Button Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" Margin="7" Name="RaceBtn" Click="RaceBtn_Click">Race!!</Button>
+            <Button  Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" Margin="7" Name="RaceBtn" Click="RaceBtn_Click">Race!!</Button>
 
 
         </Grid>
